@@ -1,5 +1,3 @@
-'use strict'
-
 const jsesc = require('jsesc')
 const debug = require('debug')('json-line-parser')
 
