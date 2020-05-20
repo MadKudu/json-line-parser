@@ -1,27 +1,27 @@
 {
   "name": "json-line-parser",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "main": "index.js",
   "engines": {
-    "node": "6.9.1",
-    "npm": "3.10.8"
+    "node": ">=10.16.3",
+    "npm": ">=6.9.0"
   },
   "scripts": {
     "postinstall": "",
     "test": "npm run-script lint && npm run-script mocha",
-    "mocha": "./node_modules/mocha/bin/mocha --recursive test/",
-    "lint": "./node_modules/eslint/bin/eslint.js . --fix"
+    "mocha": "mocha --recursive test/",
+    "lint": "eslint . --fix"
   },
   "dependencies": {
-    "debug": "4.1.0",
-    "jsesc": "2.5.2"
+    "debug": "4.1.1",
+    "jsesc": "3.0.1"
   },
   "devDependencies": {
     "chai": "4.2.0",
-    "eslint": "5.9.0",
-    "eslint-config-standard": "12.0.0",
-    "eslint-plugin-promise": "4.0.1",
-    "eslint-plugin-standard": "4.0.0",
-    "mocha": "5.2.0"
+    "eslint": "7.0.0",
+    "eslint-config-standard": "14.1.1",
+    "eslint-plugin-promise": "4.2.1",
+    "eslint-plugin-standard": "4.0.1",
+    "mocha": "7.1.2"
   }
 }
