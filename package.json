@@ -1,28 +1,19 @@
 {
-  "name": "json-line-parser",
+  "name": "@madkudu/json-line-parser",
+  "description": "A library that will help us transform a JSON (text format) line into a JSON object",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MadKudu/json-line-parser"
+  },
   "license": "MIT",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "main": "index.js",
   "engines": {
     "node": ">=10.16.3",
     "npm": ">=6.9.0"
   },
-  "scripts": {
-    "postinstall": "",
-    "test": "npm run-script lint && npm run-script mocha",
-    "mocha": "mocha --recursive test/",
-    "lint": "eslint . --fix"
-  },
   "dependencies": {
-    "debug": "4.1.1",
-    "jsesc": "3.0.1"
-  },
-  "devDependencies": {
-    "chai": "4.2.0",
-    "eslint": "7.0.0",
-    "eslint-config-standard": "14.1.1",
-    "eslint-plugin-promise": "4.2.1",
-    "eslint-plugin-standard": "4.0.1",
-    "mocha": "7.1.2"
+    "debug": "4.3.4",
+    "jsesc": "3.0.2"
   }
 }
