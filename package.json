@@ -7,12 +7,6 @@
     "node": ">=10.16.3",
     "npm": ">=6.9.0"
   },
-  "scripts": {
-    "postinstall": "",
-    "test": "npm run-script lint && npm run-script mocha",
-    "mocha": "mocha --recursive test/",
-    "lint": "eslint . --fix"
-  },
   "dependencies": {
     "debug": "4.3.4",
     "jsesc": "3.0.2"
