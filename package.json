@@ -1,5 +1,10 @@
 {
-  "name": "json-line-parser",
+  "name": "@madkudu/json-line-parser",
+  "description": "A library that will help us transform a JSON (text format) line into a JSON object",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MadKudu/json-line-parser"
+  },
   "license": "MIT",
   "version": "1.1.2",
   "main": "index.js",

@@ -1,0 +1,53 @@
+version: 2
+
+references:
+  defaults: &defaults
+    working_directory: ~/repo
+    docker:
+      - image: cimg/node:10.24.1
+
+jobs:
+  build_job:
+    <<: *defaults
+
+    steps:
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package-lock.json" }}
+            - v1-dependencies-
+      - run: npm install
+      - save_cache:
+          key: v1-dependencies-{{ checksum "package-lock.json" }}
+          paths:
+            - ./node_modules
+
+      - persist_to_workspace:
+          root: ~/repo
+          paths: .
+
+  publish_job:
+    <<: *defaults
+
+    steps:
+      - attach_workspace:
+          at: ~/repo
+      - run:
+          name: Authenticate with registry
+          command: echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > ~/repo/.npmrc
+      - deploy:
+          command: npm publish
+
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - build_job:
+          context: dev
+      - publish_job:
+          context: prod
+          requires:
+            - build_job
+          filters:
+            branches:
+              only: master
